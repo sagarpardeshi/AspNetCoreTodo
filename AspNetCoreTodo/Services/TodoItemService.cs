@@ -20,7 +20,7 @@ namespace AspNetCoreTodo.Services
         public async Task<TodoItem[]> GetIncompleteItemsAsync()
         {
             return await _context.Items
-                .Where(x => x.IsDone == false )
+                .Where(x => x.IsDone == false)
                 .ToArrayAsync();
         }
 
@@ -28,8 +28,8 @@ namespace AspNetCoreTodo.Services
         {
             Guid guid = Guid.NewGuid();
             newItem.Id = guid;
-            newItem.IsDone = false;
-            newItem.DueAt = DateTimeOffset.Now.AddDays(3);
+            // newItem.IsDone = false;
+            // newItem.DueAt = DateTimeOffset.Now.AddDays(3);
 
             _context.Items.Add(newItem);
 
